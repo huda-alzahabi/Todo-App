@@ -21,6 +21,10 @@
     margin-left: 3%;
 }
 
+h2 {
+    font-family: sans-serif;
+}
+
 button {
     background-color: burlywood;
     border: none;
@@ -28,23 +32,46 @@ button {
     padding: 2%;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 10px;
+    width: 30%;
 }
 
 input[type="text"] {
     width: 5%;
     border-radius: 5px;
     padding: 2%;
+    font-size: 20px;
 }
 
-textarea {
+.title {
+    height: 30%;
     width: 50%;
-    height: 50%;
     border-radius: 5px;
+    font-size: 20px;
 }
 
-.update_id {
-    margin-top: 5%;
+.description {
+    height: 70%;
+    width: 80%;
+    font-size: 20px;
+}
+
+.pts {
+    font-size: 20px;
+}
+
+option {
+    font-size: 20px;
+}
+
+@media only screen and (max-width:800px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .inputs,
+    .todo_table {
+        width: 100%;
+    }
 }
