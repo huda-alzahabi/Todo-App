@@ -14,6 +14,11 @@
     height: fit-content;
 }
 
+th,
+td {
+    text-align: center;
+}
+
 .inputs {
     width: 35%;
     display: flex;
@@ -49,12 +54,14 @@ input[type="text"] {
     width: 50%;
     border-radius: 5px;
     font-size: 20px;
+    margin-bottom: 2%;
 }
 
 .description {
-    height: 70%;
+    height: 68%;
     width: 80%;
     font-size: 20px;
+    margin-bottom: 2%;
 }
 
 .pts {
