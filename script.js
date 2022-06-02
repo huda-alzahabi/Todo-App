@@ -39,17 +39,31 @@ function addItem() {
 
 function updateItem() {
     let id = $("#update_id").val();
-    let title = $("#update_id").val();
-    let description = $("#update_id").val();
-    let points = $("#update_id").val();
-    if (title)
+    let title = $("#update_title").val();
+    let description = $("#update_description").val();
+    let points = $("#update_points").val();
+    if (title) {
         $("#" + id)
-        .closest("tr")
-        .prev("tr")
-        .children("td:eq(1)")
-        .text("title");
-    //     if (description) rowintable.cells[2].innerHTML = description;
-    //     if (points) rowintable.cells[3].innerHTML = points;
+            .parents("tr")
+            .find("td:eq(0)")
+            .html(title);
+        $("#todo_table")
+            .find("tr#" + id)
+            .find("td:eq(1)")
+            .html(title);
+    }
+    if (description) {
+        $("#todo_table")
+            .find("tr#" + id)
+            .find("td:eq(2)")
+            .html(description);
+    }
+    if (points) {
+        $("#todo_table")
+            .find("tr#" + id)
+            .find("td:eq(3)")
+            .html(points);
+    }
 }
 
 function removeItem() {
