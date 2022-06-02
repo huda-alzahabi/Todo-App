@@ -1,0 +1,12 @@
+.todo_table {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    background: burlywood;
+    border-radius: 10px;
+    padding: 40px;
+    font-family: sans-serif;
+    font-size: x-large;
+}
