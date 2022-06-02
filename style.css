@@ -42,11 +42,18 @@ button {
     width: 30%;
 }
 
-input[type="text"] {
+.remove_id,
+.update_id {
     width: 10%;
     border-radius: 5px;
     padding: 2%;
     font-size: 20px;
+}
+
+.search {
+    width: 50%;
+    height: 35px;
+    border-radius: 5px;
 }
 
 .title {
@@ -58,7 +65,7 @@ input[type="text"] {
 }
 
 .description {
-    height: 68%;
+    height: 50%;
     width: 80%;
     font-size: 20px;
     margin-bottom: 2%;

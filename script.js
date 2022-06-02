@@ -8,6 +8,9 @@ function start() {
 
     const removeBtn = $("#remove_btn");
     removeBtn.click(removeItem);
+
+    const searchBtn = $("#search");
+    searchBtn.keyup(search);
 }
 
 function addItem() {
@@ -18,7 +21,13 @@ function addItem() {
     let points = $("#add_points").val();
     let d = new Date();
     let timestamp =
-        d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+        d.getFullYear() +
+        "/" +
+        (d.getMonth() + 1) +
+        "/" +
+        d.getDate() +
+        " " +
+        d.getTime();
 
     //save them to the todo list table
     $("#todo_table tbody").append(
@@ -87,4 +96,11 @@ function removeItem() {
     rowintable.closest("tr").remove();
 }
 
+//search based on title and description
+function search() {
+    var value = $(this).val().toLowerCase();
+    $("#todo_table tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+}
 start();
