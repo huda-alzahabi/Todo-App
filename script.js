@@ -49,6 +49,10 @@ function addItem() {
 
 function updateItem() {}
 
-function removeItem() {}
+function removeItem() {
+    let idInput = $("#remove_id").val();
+    let rowintable = $("#" + idInput);
+    rowintable.closest("tr").remove();
+}
 
 start();
