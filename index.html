@@ -8,7 +8,7 @@
 
 </head>
 
-<body>
+<body class="container">
     <table class="todo_table" id="todo_table">
         <tr>
             <th>Id</th>
@@ -19,6 +19,36 @@
             <th>CreatedAt</th>
         </tr>
     </table>
+
+    <div class="inputs">
+        <p><textarea id="add_title" placeholder="Title"></textarea>
+            <textarea id="add_description" placeholder="Description"></textarea>
+            <label for="Points">Points</label>
+            <select name="Points" id="add_points">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button id="add_btn">Add todo</button></p>
+        <input type="text" id="update_id" class="update_id" placeholder="Id">
+        <p>
+            <textarea id="update_title" placeholder="Title"></textarea>
+            <textarea id="update_description" placeholder="Description"></textarea>
+            <label for="Points">Points</label>
+            <select name="Points" id="update_points">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button id="update_btn">Update todo</button></p>
+
+        <p><input type="text" id="remove_id" placeholder="Id">
+            <button id="remove_btn">Remove todo</button></p>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script.js"></script>
