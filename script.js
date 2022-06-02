@@ -17,36 +17,6 @@ function start() {
 }
 
 function addItem() {
-    if (document.cookie.indexOf("mycookie") == -1) {
-        //first visit to the website > data should not be saved and table is empty
-        document.cookie = "mycookie=1";
-    } else {
-        //there exists saved data, display them on the screen
-        let array = JSON.parse(localStorage.getItem("Items"));
-        /*  for (i = 0; i < array.length; i++) {
-                  $("#todo_table tbody").append(
-                      "<tr>" +
-                      "<td>" +
-                      array[i].id +
-                      "</td>" +
-                      "<td>" +
-                      array[i].title +
-                      "</td>" +
-                      "<td>" +
-                      array[i].description +
-                      "</td>" +
-                      "<td>" +
-                      array[i].points +
-                      "</td>" +
-                      "<td>" +
-                      false +
-                      "</td>" +
-                      "<td>" +
-                      array[i].timestamp +
-                      "</td>"
-                  );
-        }*/
-    }
     //take the input values from the user and generate an id
     let id = Math.floor(Math.random() * 1000) + 1;
     let title = $("#add_title").val();
