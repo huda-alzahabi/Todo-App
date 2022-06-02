@@ -17,6 +17,36 @@ function start() {
 }
 
 function addItem() {
+    if (document.cookie.indexOf("mycookie") == -1) {
+        //first visit to the website > data should not be saved and table is empty
+        document.cookie = "mycookie=1";
+    } else {
+        //there exists saved data, display them on the screen
+        let array = JSON.parse(localStorage.getItem("Items"));
+        /*  for (i = 0; i < array.length; i++) {
+                  $("#todo_table tbody").append(
+                      "<tr>" +
+                      "<td>" +
+                      array[i].id +
+                      "</td>" +
+                      "<td>" +
+                      array[i].title +
+                      "</td>" +
+                      "<td>" +
+                      array[i].description +
+                      "</td>" +
+                      "<td>" +
+                      array[i].points +
+                      "</td>" +
+                      "<td>" +
+                      false +
+                      "</td>" +
+                      "<td>" +
+                      array[i].timestamp +
+                      "</td>"
+                  );
+        }*/
+    }
     //take the input values from the user and generate an id
     let id = Math.floor(Math.random() * 1000) + 1;
     let title = $("#add_title").val();
@@ -66,7 +96,7 @@ function addItem() {
 
     //save the items in local storage
     itemsArr = [];
-    var item = itemHelper(id, title, description, points, false, timestamp);
+    let item = itemHelper(id, title, description, points, false, timestamp);
     itemsArr.push(item);
     localStorage.setItem("Items", JSON.stringify(itemsArr));
 }
@@ -107,7 +137,7 @@ function removeItem() {
 
 //search based on title and description
 function search() {
-    var value = $(this).val().toLowerCase();
+    let value = $(this).val().toLowerCase();
     $("#todo_table tr").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
@@ -127,6 +157,7 @@ function done() {
         .html(true);
 }
 
+//helper method to help save items as objects in local storage
 function itemHelper(id, title, description, isDone, Date) {
     return {
         itemId: id,
