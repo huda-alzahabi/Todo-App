@@ -63,6 +63,12 @@ function addItem() {
             );
         })
         .appendTo("tbody");
+
+    //save the items in local storage
+    itemsArr = [];
+    var item = itemHelper(id, title, description, points, false, timestamp);
+    itemsArr.push(item);
+    localStorage.setItem("Items", JSON.stringify(itemsArr));
 }
 
 function updateItem() {
@@ -119,5 +125,15 @@ function done() {
         .find("tr#" + id)
         .find("td:eq(4)")
         .html(true);
+}
+
+function itemHelper(id, title, description, isDone, Date) {
+    return {
+        itemId: id,
+        title: title,
+        description: description,
+        isDone: isDone,
+        Date: Date,
+    };
 }
 start();
