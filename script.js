@@ -16,38 +16,41 @@ function addItem() {
     let points = $("#add_points").val();
     id++;
 
-    let table = $("#todo_table");
-    let tr = document.createElement("tr");
-    table.append(tr);
-    tr.setAttribute("id", id);
-
-    let id_cell = document.createElement("td");
-    tr.append(id_cell);
-
-    let title_cell = document.createElement("td");
-    tr.append(title_cell);
-
-    let description_cell = document.createElement("td");
-    tr.append(description_cell);
-
-    let point_cell = document.createElement("td");
-    tr.append(point_cell);
-
-    let isdone_cell = document.createElement("td");
-    tr.append(isdone_cell);
-
-    let created_at_cell = document.createElement("td");
-    tr.append(created_at_cell);
-
-    id_cell.innerHTML = id;
-    title_cell.innerHTML = title;
-    description_cell.innerHTML = description;
-    point_cell.innerHTML = points;
-    isdone_cell.innerHTML = false;
-    created_at_cell.innerHTML = 11;
+    $("#todo_table tbody").append(
+        "<tr>" +
+        "<td>" +
+        id +
+        "</td>" +
+        "<td>" +
+        title +
+        "</td>" +
+        "<td>" +
+        description +
+        "</td>" +
+        "<td>" +
+        points +
+        "</td>" +
+        "<td>" +
+        false +
+        "</td>" +
+        "<td>33</td>"
+    );
 }
 
-function updateItem() {}
+function updateItem() {
+    let id = $("#update_id").val();
+    let title = $("#update_id").val();
+    let description = $("#update_id").val();
+    let points = $("#update_id").val();
+    if (title)
+        $("#" + id)
+        .closest("tr")
+        .prev("tr")
+        .children("td:eq(1)")
+        .text("title");
+    //     if (description) rowintable.cells[2].innerHTML = description;
+    //     if (points) rowintable.cells[3].innerHTML = points;
+}
 
 function removeItem() {
     let idInput = $("#remove_id").val();
