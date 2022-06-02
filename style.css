@@ -26,10 +26,6 @@ td {
     margin-left: 3%;
 }
 
-h2 {
-    font-family: sans-serif;
-}
-
 button {
     background-color: burlywood;
     border: none;
@@ -39,11 +35,19 @@ button {
     text-decoration: none;
     font-size: 20px;
     border-radius: 10px;
-    width: 30%;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
+
+.add_btn,
+.update_btn {
+    width: 90%;
 }
 
 .remove_id,
-.update_id {
+.update_id,
+.done_id {
     width: 10%;
     border-radius: 5px;
     padding: 2%;
@@ -51,7 +55,9 @@ button {
 }
 
 .search {
-    width: 50%;
+    width: 100%;
+    font-size: 20px;
+    font-family: sans-serif;
     height: 35px;
     border-radius: 5px;
 }
@@ -77,6 +83,10 @@ button {
 
 option {
     font-size: 20px;
+}
+
+.done {
+    font-size: xx-large;
 }
 
 @media only screen and (max-width:800px) {

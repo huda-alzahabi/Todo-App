@@ -11,6 +11,9 @@ function start() {
 
     const searchBtn = $("#search");
     searchBtn.keyup(search);
+
+    const doneBtn = $("#done_btn");
+    doneBtn.click(done);
 }
 
 function addItem() {
@@ -68,7 +71,7 @@ function updateItem() {
     let title = $("#update_title").val();
     let description = $("#update_description").val();
     let points = $("#update_points").val();
-    //if there is any input, ie the user wants to change a certain field, update it
+    //if there is any input, i.e. the user wants to change a certain field, update it
     if (title) {
         $("#todo_table")
             .find("tr#" + id)
@@ -102,5 +105,19 @@ function search() {
     $("#todo_table tr").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
+}
+
+function done() {
+    //take from the user the id of the row that is done, and fade it out
+
+    let id = $("#done").val();
+    let rowintable = $("#" + id);
+    rowintable.closest("tr").addClass("done");
+
+    //set the value of isDone to true
+    $("#todo_table")
+        .find("tr#" + id)
+        .find("td:eq(4)")
+        .html(true);
 }
 start();
